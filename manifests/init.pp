@@ -30,7 +30,7 @@ class java7 {
     group => root,
     owner => root,
     mode => 744,
-  	source => "puppet:///modules/java/set_java_home.sh",
+  	source => "puppet:///modules/java7/set_java_home.sh",
   	require => Package['oracle-java7-installer']
   }
 }
