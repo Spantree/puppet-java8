@@ -24,4 +24,13 @@ class java7 {
       Apt::Ppa['ppa:webupd8team/java']
     ]
   }
+  
+  file { "/etc/profile.d/set_java_home.sh":
+    ensure => file,
+    group => root,
+    owner => root,
+    mode => 744,
+  	source => "puppet:///modules/java/set_java_home.sh",
+  	require => Package['oracle-java7-installer']
+  }
 }
