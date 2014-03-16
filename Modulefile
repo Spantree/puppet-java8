@@ -1,5 +1,5 @@
 name 'spantree-java7'
-version '0.1.0'
+version '0.2.1'
 source 'git://github.com/Spantree/puppet-java7.git'
 author 'Spantree'
 license ''
