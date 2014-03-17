@@ -12,17 +12,17 @@ class java7 {
       include apt
 
       apt::source { 'feniix':
-        location          => 'http://ppa.launchpad.net/feniix/java/ubuntu',
+        location          => 'http://ppa.launchpad.net/webupd8team/java/ubuntu',
         release           => 'precise',
         repos             => 'main',
-        key               => '13EB2142',
+        key               => 'EEA14886',
         key_server        => 'keyserver.ubuntu.com',
         include_src       => true
       }
       package { 'oracle-java7-installer':
         responsefile => '/tmp/java.preseed',
         require      => [
-                          Apt::Source['feniix'],
+                          Apt::Source['webupd8team'],
                           File['/tmp/java.preseed']
                         ],
       }
@@ -30,11 +30,11 @@ class java7 {
     ubuntu: {
       include apt
 
-      apt::ppa { 'ppa:feniix/java': }
+      apt::ppa { 'ppa:webupd8team/java': }
       package { 'oracle-java7-installer':
         responsefile => '/tmp/java.preseed',
         require      => [
-                          Apt::Ppa['ppa:feniix/java'],
+                          Apt::Ppa['ppa:webupd8team/java'],
                           File['/tmp/java.preseed']
                         ],
       }
