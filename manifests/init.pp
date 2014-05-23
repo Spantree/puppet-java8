@@ -1,17 +1,29 @@
-# Class: java7
+# Class: java8
 #
-# This module manages Oracle Java7
+# This module manages Oracle java8
 # Parameters: none
 # Requires:
 #  apt
 # Sample Usage:
-#  include java7
-class java7 {
+#  include java8
+class java8 {
+  case $::operatingsystem {
+    debian, ubuntu: {
+      file { '/tmp/java.preseed':
+        source => 'puppet:///modules/java8/java.preseed',
+        mode   => '0600',
+        backup => false,
+      }
+    }
+
+    default: { notice "Unsupported operatingsystem ${::operatingsystem}" }
+  }
+
   case $::operatingsystem {
     debian: {
       include apt
 
-      apt::source { 'feniix':
+      apt::source { 'webupd8team':
         location          => 'http://ppa.launchpad.net/webupd8team/java/ubuntu',
         release           => 'precise',
         repos             => 'main',
@@ -19,38 +31,32 @@ class java7 {
         key_server        => 'keyserver.ubuntu.com',
         include_src       => true
       }
-      package { 'oracle-java7-installer':
+
+      package { 'oracle-java8-installer':
         responsefile => '/tmp/java.preseed',
         require      => [
-                          Apt::Source['webupd8team'],
-                          File['/tmp/java.preseed']
-                        ],
+          Apt::Source['webupd8team'],
+          File['/tmp/java.preseed']
+        ],
       }
     }
+
     ubuntu: {
       include apt
 
       apt::ppa { 'ppa:webupd8team/java': }
-      package { 'oracle-java7-installer':
+      package { 'oracle-java8-installer':
         responsefile => '/tmp/java.preseed',
         require      => [
-                          Apt::Ppa['ppa:webupd8team/java'],
-                          File['/tmp/java.preseed']
-                        ],
+          Apt::Ppa['ppa:webupd8team/java'],
+          File['/tmp/java.preseed']
+        ],
       }
     }
-    default: { notice "Unsupported operatingsystem ${::operatingsystem}" }
-  }
 
-  case $::operatingsystem {
-    debian, ubuntu: {
-      file { '/tmp/java.preseed':
-        source => 'puppet:///modules/java7/java.preseed',
-        mode   => '0600',
-        backup => false,
-      }
+    default: {
+      notice "Unsupported operatingsystem ${::operatingsystem}"
     }
-    default: { notice "Unsupported operatingsystem ${::operatingsystem}" }
   }
 
   file { '/etc/profile.d/set_java_home.sh':
@@ -58,7 +64,7 @@ class java7 {
     group   => root,
     owner   => root,
     mode    => '0755',
-    source  => 'puppet:///modules/java7/set_java_home.sh',
-    require => Package['oracle-java7-installer']
+    source  => 'puppet:///modules/java8/set_java_home.sh',
+    require => Package['oracle-java8-installer']
   }
 }
