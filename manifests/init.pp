@@ -44,6 +44,7 @@ class java8 {
       include apt
 
       apt::ppa { 'ppa:webupd8team/java': }
+      
       package { 'oracle-java8-installer':
         responsefile => '/tmp/java.preseed',
         require      => [
