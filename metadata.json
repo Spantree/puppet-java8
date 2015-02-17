@@ -1,6 +1,6 @@
 {
-  "name": "spantree-java7",
-  "version": "0.2.6",
+  "name": "spantree-java8",
+  "version": "0.3.0",
   "author": "spantree",
   "summary": "Oracle Java8 Puppet Module",
   "license": "Apache 2.0",
