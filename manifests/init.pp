@@ -22,13 +22,13 @@ class java8 {
   case $::operatingsystem {
     debian: {
       include apt
-
-      apt::source { 'webupd8team':
-        location          => 'http://ppa.launchpad.net/webupd8team/java/ubuntu',
-        repos             => 'main',
-        key               => 'EEA14886',
-        key_server        => 'keyserver.ubuntu.com',
-        include_src       => true
+      apt::source { 'webupd8team-java':
+        location    => 'http://ppa.launchpad.net/webupd8team/java/ubuntu',
+        release     => 'precise',
+        repos       => 'main',
+        key         => '7B2C3B0889BF5709A105D03AC2518248EEA14886',
+        key_server  => 'keyserver.ubuntu.com',
+        include_src => true
       }
 
       package { 'oracle-java8-installer':
