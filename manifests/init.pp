@@ -34,7 +34,7 @@ class java8 {
       package { 'oracle-java8-installer':
         responsefile => '/tmp/java.preseed',
         require      => [
-          Apt::Source['webupd8team'],
+          Apt::Source['webupd8team-java'],
           File['/tmp/java.preseed']
         ],
       }
