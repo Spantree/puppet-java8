@@ -1,9 +1,9 @@
 {
   "name": "spantree-java8",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "author": "spantree",
   "summary": "Oracle Java8 Puppet Module",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/Spantree/puppet-java8.git",
   "project_page": "https://github.com/spantree/puppet-java8",
   "issues_url": "https://github.com/spantree/puppet-java8/issues",
@@ -27,7 +27,7 @@
   "dependencies": [
     {
       "name": "puppetlabs/apt",
-      "version_requirement": ">= 1.0.1 < 2.0.0"
+      "version_requirement": ">= 1.0.1 <= 2.2.1"
     },
     {
       "name": "puppetlabs/stdlib",
@@ -37,7 +37,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">=3.2.0 <4.0.0"
+      "version_requirement": ">=3.0.0 <=4.4.1"
     }
   ]
 }
