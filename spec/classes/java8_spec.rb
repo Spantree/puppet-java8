@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'java8', :type => :class do
 
   shared_examples_for 'a linux os' do
-    it " should compile.with_all_deps "
+    it { is_expected.to compile }
     it { should contain_class('apt') }
     it { should contain_package('oracle-java8-installer').with(
       'responsefile' => '/tmp/java.preseed'
