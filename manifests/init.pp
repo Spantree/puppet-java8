@@ -46,11 +46,11 @@ class java8 {
       apt::ppa { 'ppa:webupd8team/java': }
 
       exec { 'apt-update':
-        command => "/usr/bin/apt-get update",
-        require      => [
+        command => '/usr/bin/apt-get update',
+        require => [
           Apt::Ppa['ppa:webupd8team/java']
         ],
-       }
+      }
 
       package { 'oracle-java8-installer':
         responsefile => '/tmp/java.preseed',
@@ -58,7 +58,7 @@ class java8 {
           Exec['apt-update'],
           File['/tmp/java.preseed']
         ],
-       }
+      }
     }
 
     default: {
