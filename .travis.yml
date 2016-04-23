@@ -23,6 +23,7 @@ notifications:
       - feniix@gmail.com
     on_failure: change
     on_success: change
+
 matrix:
   exclude:
   - rvm: 2.1.0
