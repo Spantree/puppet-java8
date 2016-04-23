@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/Spantree/puppet-java8.svg?branch=master)](https://travis-ci.org/Spantree/puppet-java8)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/spantree/java8.svg)](https://forge.puppetlabs.com/spantree/java8)
 [![Puppet Forge](https://img.shields.io/puppetforge/f/spantree/java8.svg)](https://forge.puppetlabs.com/spantree/java8)
-[![Puppet Forge](https://img.shields.io/puppetforge/e/spantree/java8.svg)](https://forge.puppetlabs.com/spantree/java8)
 
 This module manages Oracle java8.
 
