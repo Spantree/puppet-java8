@@ -51,8 +51,9 @@ class java8 {
       apt::ppa { 'ppa:webupd8team/java': }
 
       exec { 'apt-update':
-        command => '/usr/bin/apt-get update',
-        require => [
+        command     => '/usr/bin/apt-get update',
+        refreshonly => true,
+        subscribe   => [
           Apt::Ppa['ppa:webupd8team/java']
         ],
       }
