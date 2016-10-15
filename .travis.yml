@@ -4,13 +4,8 @@ cache: bundler
 before_install: rm Gemfile.lock || true
 install: bundle install --without development
 rvm:
-  - 2.0.0
-  - 2.1.0
-  - 2.2.0
   - 2.3.0
-env: 
-  - PUPPET_VERSION="~> 3.7"
-  - PUPPET_VERSION="~> 3.8"
+env:
   - PUPPET_VERSION="~> 4.0"
   - PUPPET_VERSION="~> 4.1"
   - PUPPET_VERSION="~> 4.2"
