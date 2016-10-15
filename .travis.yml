@@ -4,13 +4,20 @@ cache: bundler
 before_install: rm Gemfile.lock || true
 install: bundle install --without development
 rvm:
+  - 2.1.0
+  - 2.2.0
   - 2.3.0
 env:
+  - PUPPET_VERSION="~> 3.7"
+  - PUPPET_VERSION="~> 3.8"
   - PUPPET_VERSION="~> 4.0"
   - PUPPET_VERSION="~> 4.1"
   - PUPPET_VERSION="~> 4.2"
   - PUPPET_VERSION="~> 4.3"
   - PUPPET_VERSION="~> 4.4"
+  - PUPPET_VERSION="~> 4.5"
+  - PUPPET_VERSION="~> 4.6"
+  - PUPPET_VERSION="~> 4.7"
 script:  bundle exec rake test
 branches:
   only:
