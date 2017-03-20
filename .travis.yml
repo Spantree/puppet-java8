@@ -1,8 +1,10 @@
 ---
 language: ruby
 cache: bundler
-before_install: rm Gemfile.lock || true
-install: bundle install --without development
+before_install:
+  - rm Gemfile.lock || true
+  - gem install -V bundler
+install: travis_retry bundle install --without development
 rvm:
   - 2.1.0
   - 2.2.0
@@ -18,6 +20,8 @@ env:
   - PUPPET_VERSION="~> 4.5"
   - PUPPET_VERSION="~> 4.6"
   - PUPPET_VERSION="~> 4.7"
+  - PUPPET_VERSION="~> 4.8"
+  - PUPPET_VERSION="~> 4.9"
 script:  bundle exec rake test
 branches:
   only:
