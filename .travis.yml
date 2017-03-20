@@ -1,7 +1,9 @@
 ---
 language: ruby
 cache: bundler
-before_install: rm Gemfile.lock || true
+before_install:
+  - rm Gemfile.lock || true
+  - gem install -V bundler
 install: travis_retry bundle install --without development
 rvm:
   - 2.1.0
