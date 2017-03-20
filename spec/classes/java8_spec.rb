@@ -18,13 +18,21 @@ describe 'java8', :type => :class do
 
   context 'supported operating systems' do
     describe 'ubuntu' do
-      ['precise', 'trusty'].each do |lsbdistcodename|
-        context "#{lsbdistcodename}" do
+      [
+        {'codename' => 'precise',
+         'release' => '12.04'},
+        {'codename' => 'trusty',
+         'release' => '14.04'},
+        {'codename' => 'xenial',
+         'release' => '16.04'}
+      ].each do |u|
+        context "#{u['codename']}" do
           let(:facts) {{
             :lsbdistid => 'Ubuntu',
             :osfamily => 'Debian',
             :operatingsystem => 'Ubuntu',
-            :lsbdistcodename =>  lsbdistcodename
+            :lsbdistcodename => u['codename'],
+            :lsbdistrelease => u['release']
           }}
           it_behaves_like 'a linux os' do
           end
@@ -35,7 +43,7 @@ describe 'java8', :type => :class do
     describe 'debian' do
       ['squeeze', 'wheezy'].each do |lsbdistcodename|
         context "#{lsbdistcodename}" do
-          let(:facts) {{ 
+          let(:facts) {{
             :lsbdistid => 'Debian',
             :operatingsystem => 'Debian',
             :osfamily => 'Debian',
