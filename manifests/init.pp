@@ -8,7 +8,7 @@
 #  include java8
 class java8 {
   case $::operatingsystem {
-    debian, ubuntu: {
+    'debian', 'ubuntu': {
       file { '/tmp/java.preseed':
         source => 'puppet:///modules/java8/java.preseed',
         mode   => '0600',
@@ -20,8 +20,8 @@ class java8 {
   }
 
   case $::operatingsystem {
-    debian: {
-      include apt
+    'debian': {
+      include ::apt
       apt::source { 'webupd8team-java':
         location => 'http://ppa.launchpad.net/webupd8team/java/ubuntu',
         release  => 'precise',
@@ -45,8 +45,8 @@ class java8 {
       }
     }
 
-    ubuntu: {
-      include apt
+    'ubuntu': {
+      include ::apt
 
       apt::ppa { 'ppa:webupd8team/java': }
 
@@ -78,6 +78,6 @@ class java8 {
     owner   => root,
     mode    => '0755',
     source  => 'puppet:///modules/java8/set_java_home.sh',
-    require => Package['oracle-java8-installer']
+    require => Package['oracle-java8-installer'],
   }
 }
