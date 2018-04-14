@@ -4,7 +4,9 @@ cache: bundler
 before_install:
   - rm Gemfile.lock || true
   - gem install -V bundler
-install: travis_retry bundle install --without development
+install:
+  - travis_retry bundle install --without development
+  - bundle list
 rvm:
   - 2.3.0
   - 2.4.0
