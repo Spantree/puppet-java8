@@ -8,19 +8,8 @@ install:
   - travis_retry bundle install --without development
   - bundle list
 rvm:
-  - 2.3.0
-  - 2.4.0
+  - 2.4.4
 env:
-  - PUPPET_VERSION="~> 3.7.0"
-  - PUPPET_VERSION="~> 3.8.0"
-  - PUPPET_VERSION="~> 4.0.0"
-  - PUPPET_VERSION="~> 4.1.0"
-  - PUPPET_VERSION="~> 4.2.0"
-  - PUPPET_VERSION="~> 4.3.0"
-  - PUPPET_VERSION="~> 4.4.0"
-  - PUPPET_VERSION="~> 4.5.0"
-  - PUPPET_VERSION="~> 4.6.0"
-  - PUPPET_VERSION="~> 4.7.0"
   - PUPPET_VERSION="~> 4.8.0"
   - PUPPET_VERSION="~> 4.9.0"
   - PUPPET_VERSION="~> 4.10.0"
@@ -41,13 +30,3 @@ notifications:
     on_failure: change
     on_success: change
 
-matrix:
-  exclude:
-    - rvm: 2.3.0
-      env: PUPPET_VERSION="~> 3.7.0"
-    - rvm: 2.3.0
-      env: PUPPET_VERSION="~> 3.8.0"
-    - rvm: 2.4.0
-      env: PUPPET_VERSION="~> 3.7.0"
-    - rvm: 2.4.0
-      env: PUPPET_VERSION="~> 3.8.0"

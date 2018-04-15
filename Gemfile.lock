@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    CFPropertyList (2.3.6)
+    CFPropertyList (2.2.8)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     ansi (1.5.0)
@@ -136,8 +136,7 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
-    hiera (2.0.0)
-      json_pure
+    hiera (3.4.2)
     highline (1.7.10)
     hocon (1.2.5)
     http-cookie (1.0.3)
@@ -147,7 +146,7 @@ GEM
     inifile (3.0.0)
     ipaddress (0.8.3)
     json (1.8.6)
-    json_pure (2.1.0)
+    json_pure (1.8.6)
     jwt (2.1.0)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -190,10 +189,15 @@ GEM
       byebug (>= 9.0, < 9.1)
       pry (~> 0.10)
     public_suffix (3.0.2)
-    puppet (4.0.0)
+    puppet (4.8.2)
       facter (> 2.0, < 4)
-      hiera (>= 2.0, < 3)
-      json_pure
+      hiera (>= 2.0, < 4)
+      json_pure (~> 1.8)
+    puppet (4.8.2-universal-darwin)
+      CFPropertyList (~> 2.2.6)
+      facter (> 2.0, < 4)
+      hiera (>= 2.0, < 4)
+      json_pure (~> 1.8)
     puppet-blacksmith (4.1.2)
       rest-client (~> 2.0)
     puppet-lint (2.3.5)
@@ -290,12 +294,11 @@ PLATFORMS
   x86_64-darwin-17
 
 DEPENDENCIES
-  CFPropertyList (= 2.3.6)
   beaker
   beaker-rspec
   facter (>= 1.7.0)
   nokogiri (~> 1.8)
-  puppet (~> 4.0.0)
+  puppet (~> 4.8.0)
   puppet-blacksmith
   puppet-lint (>= 1.0.0)
   puppetlabs_spec_helper (>= 0.1.0)
