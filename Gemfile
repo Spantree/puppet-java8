@@ -9,7 +9,6 @@ group :test do
   gem 'rspec-puppet', '~> 2.3.0'
   gem 'puppet-lint', '>= 1.0.0'
   gem 'facter', '>= 1.7.0'
-#  gem 'CFPropertyList', '2.3.6' # needed to avoid breakage of tests in ruby 2.4.x
 end
 
 group :development do
