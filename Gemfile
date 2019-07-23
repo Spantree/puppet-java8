@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? "#{ENV['PUPPET_VERSION']}" : ['~> 4.10.0']
+puppetversion = ENV.key?('PUPPET_VERSION') ? "#{ENV['PUPPET_VERSION']}" : ['~> 5.5.0']
 
 group :test do
   gem "rake"

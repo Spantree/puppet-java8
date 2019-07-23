@@ -8,17 +8,16 @@ install:
   - travis_retry bundle install --without development
   - bundle list
 rvm:
-  - 2.4.4
+  - 2.5.5
 env:
-  - PUPPET_VERSION="~> 4.8.0"
-  - PUPPET_VERSION="~> 4.9.0"
-  - PUPPET_VERSION="~> 4.10.0"
-  - PUPPET_VERSION="~> 5.0.0"
-  - PUPPET_VERSION="~> 5.1.0"
-  - PUPPET_VERSION="~> 5.2.0"
-  - PUPPET_VERSION="~> 5.3.0"
-  - PUPPET_VERSION="~> 5.4.0"
   - PUPPET_VERSION="~> 5.5.0"
+  - PUPPET_VERSION="~> 6.0.0"
+  - PUPPET_VERSION="~> 6.1.0"
+  - PUPPET_VERSION="~> 6.2.0"
+  - PUPPET_VERSION="~> 6.3.0"
+  - PUPPET_VERSION="~> 6.4.0"
+  - PUPPET_VERSION="~> 6.5.0"
+  - PUPPET_VERSION="~> 6.6.0"
 script:  bundle exec rake test
 branches:
   only:
