@@ -2,9 +2,9 @@ fixtures:
   forge_modules:
     stdlib:
       repo: 'puppetlabs/stdlib'
-      ref: '4.5.1'
+      ref: '5.2.0'
     apt:
       repo: 'puppetlabs/apt'
-      ref: '2.3.0'
+      ref: '4.0.0'
   symlinks:
     java8: "#{source_dir}"
