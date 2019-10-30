@@ -83,7 +83,7 @@ GEM
     net-ssh (5.2.0)
     net-telnet (0.1.1)
     netrc (0.11.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     open_uri_redirections (0.2.1)
     pathspec (0.2.1)
@@ -187,7 +187,7 @@ DEPENDENCIES
   beaker
   beaker-rspec
   facter (>= 1.7.0)
-  nokogiri (~> 1.8)
+  nokogiri (~> 1.10)
   puppet (~> 5.5.0)
   puppet-blacksmith
   puppet-lint (>= 1.0.0)

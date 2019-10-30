@@ -20,4 +20,4 @@ group :development do
   gem "puppet-blacksmith"
 end
 
-gem 'nokogiri', '~> 1.8'
+gem 'nokogiri', '~> 1.10'
